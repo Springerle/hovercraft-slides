@@ -1,0 +1,12 @@
+{
+    "full_name": "Joe Schmoe"
+  , "github_username": "{{ (cookiecutter.full_name[0] + cookiecutter.full_name.split(None, 1)[1]) | lower | replace(' ', '') }}"
+  , "email": "{{ cookiecutter.github_username }}@example.com"
+  , "project_name": "HoverCraft Presentation"
+  , "repo_name": "{{ cookiecutter.project_name | lower | replace(' ', '-') }}-slides"
+  , "version": "1.0"
+  , "year": "2016"
+  , "license": "CC0"
+  , "github_url": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}"
+  , "url": "{{ cookiecutter.github_url }}"
+}

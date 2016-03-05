@@ -25,7 +25,7 @@ def clean(ctx, venv=False, extra=''):
 
     # Add patterns based on given parameters
     venv_dirs = ['.venv']
-    patterns = ['demo-slides/', 'pip-selfcheck.json', '**/*~']
+    patterns = ['hovercraft-presentation-slides/', 'pip-selfcheck.json', '**/*~']
     if venv:
         patterns.extend([i + '/' for i in venv_dirs])
     if extra:
@@ -50,11 +50,8 @@ def clean(ctx, venv=False, extra=''):
 @task(pre=[clean])
 def test(ctx):
     """Perform integration tests."""
-    #ctx.run("touch '{{cookiecutter.repo_name}}/empty-testfile'")
-    #ctx.run("py.test")
-    #ctx.run("rm '{{cookiecutter.repo_name}}/empty-testfile'")
-
-    with pushd('demo-slides'):
+    ctx.run("py.test")
+    with pushd('hovercraft-presentation-slides'):
         assert os.path.exists('README.rst'), "README is created"
 
 

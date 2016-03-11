@@ -1,4 +1,18 @@
 body {
     background-color: black;
     color: white;
+    font-size: 18pt;
+}
+
+a {
+    color: #aaf;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #98f;
+}
+
+a:hover {
+    color: #bbf;
 }

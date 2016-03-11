@@ -7,8 +7,10 @@
 
 import os
 import sys
+import time
 import shlex
 import shutil
+import subprocess
 import webbrowser
 
 from rituals.easy import task, Collection, pushd
@@ -52,16 +54,46 @@ def clean(_dummy_ctx, venv=False, extra=''):
 
 
 @task(help={
-    'browse': "Open slides in a new browser tab",
+    'clean': "Start with a clean build area",
+    'opts': "Extra flags for Hovercraft",
 })
-def preview(ctx, browse=False):
+def view(ctx, browse=False, clean=False, opts=''):
     """Start live-reload watchdog."""
-    # TODO: Actually start watchdog
-    index_url = '_html/index.html'
+    def activity(what=None, i=None):
+        "Helper"
+        if i is None:
+            sys.stdout.write(what + '\n')
+        else:
+            sys.stdout.write(' {}  Waiting for {}\r'.format(r'\|/-'[i % 4], what or 'something'))
+        sys.stdout.flush()
 
-    # Open in browser?
-    if browse:
-        webbrowser.open_new_tab(index_url)
+    index_file = '_html/index.html'
+    if clean:
+        ctx.run("invoke clean")
+    elif os.path.exists(index_file):
+        os.remove(index_file)
+
+    # Assuming that your browser has a live-reload plugin
+    cmd = ('''watchmedo shell-command'''
+           ''' --command="hovercraft {opts} index.rst {htmldir}" '''
+           ''' --patterns="*.rst"'''
+           ''' {basedir} &'''
+           .format(opts=opts, htmldir=os.path.dirname(index_file), basedir='.'))
+    subprocess.call(cmd, shell=True)
+
+    for i in range(60):
+        activity('HTML index file', i)
+        if os.path.exists(index_file):
+            activity('OK')
+            break
+        time.sleep(1)
+        # trigger first build
+        os.utime(os.path.join(BASEDIR, 'index.rst'), None)
+    else:
+        activity('ERR')
+
+    # Open in browser
+    webbrowser.open_new_tab(index_file)
 
 
 @task(help={
@@ -69,12 +101,12 @@ def preview(ctx, browse=False):
 })
 def html(ctx, browse=False):
     """Build HTML tree."""
-    index_url = '_html/index.html'
-    ctx.run("hovercraft -t simple --skip-notes index.rst {}".format(os.path.dirname(index_url)))
+    index_file = '_html/index.html'
+    ctx.run("hovercraft -t simple --skip-notes index.rst {}".format(os.path.dirname(index_file)))
 
     # Open in browser?
     if browse:
-        webbrowser.open_new_tab(index_url)
+        webbrowser.open_new_tab(index_file)
 
 
 namespace = Collection.from_module(sys.modules[__name__], name='')

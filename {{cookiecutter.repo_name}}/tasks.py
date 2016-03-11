@@ -54,10 +54,23 @@ def clean(_dummy_ctx, venv=False, extra=''):
 @task(help={
     'browse': "Open slides in a new browser tab",
 })
-def watchdog(ctx, browse=False):
+def preview(ctx, browse=False):
     """Start live-reload watchdog."""
     # TODO: Actually start watchdog
     index_url = '_html/index.html'
+
+    # Open in browser?
+    if browse:
+        webbrowser.open_new_tab(index_url)
+
+
+@task(help={
+    'browse': "Open slides in a new browser tab",
+})
+def html(ctx, browse=False):
+    """Build HTML tree."""
+    index_url = '_html/index.html'
+    ctx.run("hovercraft -t simple --skip-notes index.rst {}".format(os.path.dirname(index_url)))
 
     # Open in browser?
     if browse:

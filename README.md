@@ -18,6 +18,12 @@ presentation.
    * Image-only slides
    * Styled bullet points
 
+The demo slides rendered from
+[reStructuredText](https://raw.githubusercontent.com/Springerle/hovercraft-slides/master/%7B%7Bcookiecutter.repo_name%7D%7D/index.rst)
+look like this:
+
+https://raw.githubusercontent.com/Springerle/hovercraft-slides/master/assets/slides.jpg
+
 
 ## Usage
 

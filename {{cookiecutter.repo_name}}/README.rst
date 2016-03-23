@@ -29,5 +29,5 @@ Python3 and ``pyvenv`` must be available for this to work.
     :target: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
 .. |GitHub Issues| image:: https://img.shields.io/github/issues/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg
     :target: {{ cookiecutter.github_url }}/issues
-.. |License| image:: https://img.shields.io/pypi/l/{{ cookiecutter.repos_name }}.svg
+.. |License| image:: https://img.shields.io/pypi/l/{{ cookiecutter.repo_name }}.svg
     :target: {{ cookiecutter.github_url }}/blob/master/LICENSE

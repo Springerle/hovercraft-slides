@@ -88,7 +88,7 @@ def view(ctx, browse=False, clean=False, opts=''):
             break
         time.sleep(1)
         # trigger first build
-        os.utime(os.path.join(BASEDIR, 'index.rst'), None)
+        os.utime(os.path.join(BASEDIR, 'README.rst'), None)
     else:
         activity('ERR')
 

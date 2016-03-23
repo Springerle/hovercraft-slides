@@ -8,6 +8,14 @@ presentation.
  [![CC0 licensed](http://img.shields.io/badge/license-CC0-red.svg)](https://raw.githubusercontent.com/Springerle/hovercraft-slides/master/LICENSE)
  [![GitHub Issues](https://img.shields.io/github/issues/Springerle/hovercraft-slides.svg)](https://github.com/Springerle/hovercraft-slides/issues)
 
+**Contents**
+
+  * [Features](#features)
+  * [Usage](#usage)
+      * [Quick Test of the Default Slides](#quick-test-of-the-default-slides)
+      * [Create Your Own Slide Set](#create-your-own-slide-set)
+      * [Add Your Own Logo](#add-your-own-logo)
+
 
 ## Features
 

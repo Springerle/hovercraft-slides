@@ -1,6 +1,7 @@
 /****************************************************************************
  ***    Presentation Styles
  ****************************************************************************/
+
 body {
     color: white;
     font-size: 20pt;
@@ -8,17 +9,6 @@ body {
 
     background: #111;
     background: radial-gradient(#225, #111);
-}
-
-a {
-    color: #aaf;
-    text-decoration: none;
-}
-a:visited {
-    color: #98f;
-}
-a:hover {
-    color: #bbf;
 }
 
 h1, h2, h3, h4, h5 {
@@ -98,4 +88,28 @@ div.bullet-star > ul > li:before {
     content: "\2605";
     color: #9ee;
     margin-right: 1.1rem;
+}
+
+
+/****************************************************************************
+ ***    Text Styles
+ ****************************************************************************/
+
+a {
+    color: #aaf;
+    text-decoration: none;
+}
+a:visited {
+    color: #98f;
+}
+a:hover {
+    color: #bbf;
+}
+
+pre.highlight {
+    background: #777 linear-gradient(to top, #666, #888, #666);
+}
+
+tt {
+    background: linear-gradient(to top, #336, #669, #336);
 }

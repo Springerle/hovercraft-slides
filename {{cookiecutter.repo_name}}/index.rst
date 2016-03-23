@@ -35,10 +35,20 @@ Bullet Styles
 - Bullet points cause *PowerPoint Poisoning*
 - … but we use them anyway
 
+.. break
+
 - Styling top-level bullets
 
   - use ``:class: bullet-STYLE`` on the slide
   - ``bullet-checkmark``, ``bullet-arrow``, ``bullet-hand``, or ``bullet-star``
+
+.. break
+
+- To add spacing between bullets, add a *reStructuredText* comment:
+
+    ::
+
+        .. break
 
 
 ----

@@ -23,6 +23,21 @@ presentation.
 
 ## Usage
 
+### Quick Test of the Default Slides
+
+To directly view the demo slides that come with this template, execute these commands:
+
+```sh
+git clone "https://github.com/Springerle/hovercraft-slides.git"
+cd hovercraft-slides
+. .env --yes && invoke test
+```
+
+After a while, a browser tab should open with the rendered presentation.
+
+
+### Create Your Own Slide Set
+
 To use this template, refer to the
 [Cookiecutter documentation](https://cookiecutter.readthedocs.org/en/latest/usage.html)
 – it was tested with Cookiecutter 1.4.0.
@@ -37,11 +52,10 @@ invoke view
 Note that ``invoke view`` starts a watchdog process that will react to any
 changes in ``*.rst`` files by rendering and reloading the open browser tab (*live reload*).
 
-To directly view the demo slides that come with this template, execute these commands:
 
-```sh
-git clone "https://github.com/Springerle/hovercraft-slides.git"
-cd hovercraft-slides
-. .env --yes
-invoke test
-```
+### Add Your Own Logo
+
+The logo that appears on the right of slide titles is in the ``img/title-logo.png`` file.
+Keep it roughly the same height at ``72px`` – if your logo is not square, you should
+increase the ``padding-right`` value of ``80px`` for ``h1`` accordingly (in the
+first section of ``css/default.css``).

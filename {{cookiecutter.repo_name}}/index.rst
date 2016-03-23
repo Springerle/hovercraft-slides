@@ -21,7 +21,7 @@
 Agenda
 ------
 
-- Show example `Hovercraft`_ slides
+- Show example `Hovercraft!`_ slides
 - Present built-in styling options
 
 
@@ -77,4 +77,22 @@ Floating Images
 - The image floats to the right of any content following it
 
 
-.. _`Hovercraft`: http://hovercraft.readthedocs.org/
+----
+
+:class: bullet-arrow
+
+Credits
+=======
+
+.. image:: img/python-powered.png
+   :width: 240px
+   :class: float-right
+
+- Powered by `Hovercraft!`_
+
+.. break
+
+- Hovercraft! logo – https://github.com/regebro/hovercraft/
+- Python logo – https://www.python.org/community/logos/
+
+.. _`Hovercraft!`: http://hovercraft.readthedocs.org/

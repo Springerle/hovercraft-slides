@@ -53,6 +53,7 @@ def test(ctx):
     ctx.run("py.test")
     with pushd('hovercraft-presentation-slides'):
         assert os.path.exists('README.rst'), "README is created"
+        ctx.run(". .env --yes && inv view")
 
 
 namespace = Collection.from_module(sys.modules[__name__], name='')

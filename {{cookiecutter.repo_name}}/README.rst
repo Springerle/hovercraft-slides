@@ -42,10 +42,11 @@ view    Start live-reload watchdog.
 Note that ``invoke view`` starts a watchdog process that will react to any
 changes in ``*.rst`` files by rendering and reloading the open browser tab (*live reload*).
 
-The ``pdf`` task needs [deck2pdf](https://github.com/melix/deck2pdf) installed,
-and ``thumbs`` requires *ImageMagick* (usually available via your operating system's packages).
+The ``pdf`` task needs `deck2pdf`_ installed, and ``thumbs`` requires *ImageMagick*
+(usually available via your operating system's packages).
 
 
+.. _`deck2pdf`: https://github.com/melix/deck2pdf
 .. _`impress.js`: https://github.com/impress/impress.js
 .. _`reStructuredText`: http://docutils.sourceforge.net/rst.html
 .. _`Hovercraft!`: https://hovercraft.readthedocs.org/

@@ -1,7 +1,5 @@
 # hovercraft-slides
 
-:construction: **In development!** :construction:
-
 A cookiecutter template that creates a
 [Hovercraft!](https://hovercraft.readthedocs.org/)
 presentation.

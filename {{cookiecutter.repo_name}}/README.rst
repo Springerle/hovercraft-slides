@@ -1,33 +1,51 @@
-{{ cookiecutter.project_name }}
-===============================
-
- |Travis CI|  |GitHub Issues|  |License|
-
+{% macro section(title, level='=') -%}
+{{ title }}
+{% for _ in title %}{{ level }}{% endfor %}
+{%- endmacro -%}
+{{ section(cookiecutter.project_name) }}
 
 Introduction
 ------------
 
-Usage
------
+This is a project for a slide deck, which uses `reStructuredText`_
+markup to create `impress.js`_ presentations via the Python3 tool `Hovercraft!`_.
+
 
 Installation
 ------------
 
-*{{ cookiecutter.project_name }}* can be used…
-
-As an author, to create a working directory for this project, call these commands::
+To create a working directory for this project, call these commands::
 
     git clone "{{ cookiecutter.github_url }}.git"
     cd "{{ cookiecutter.repo_name }}"
-    . .env --yes --develop
-    invoke watchdog -b
+    . .env --yes
+    invoke view
 
 Python3 and ``pyvenv`` must be available for this to work.
 
 
-.. |Travis CI| image:: https://api.travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg
-    :target: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
-.. |GitHub Issues| image:: https://img.shields.io/github/issues/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg
-    :target: {{ cookiecutter.github_url }}/issues
-.. |License| image:: https://img.shields.io/pypi/l/{{ cookiecutter.repo_name }}.svg
-    :target: {{ cookiecutter.github_url }}/blob/master/LICENSE
+Usage
+-----
+
+You can call the following tasks via ``invoke``.
+
+======= =====================================================================
+Task    Description
+======= =====================================================================
+clean   Perform house-keeping.
+html    Build HTML tree.
+pdf     Build PDF slide show.
+thumbs  Create slide show thumbnails.
+view    Start live-reload watchdog.
+======= =====================================================================
+
+Note that ``invoke view`` starts a watchdog process that will react to any
+changes in ``*.rst`` files by rendering and reloading the open browser tab (*live reload*).
+
+The ``pdf`` task needs [deck2pdf](https://github.com/melix/deck2pdf) installed,
+and ``thumbs`` requires *ImageMagick* (usually available via your operating system's packages).
+
+
+.. _`impress.js`: https://github.com/impress/impress.js
+.. _`reStructuredText`: http://docutils.sourceforge.net/rst.html
+.. _`Hovercraft!`: https://hovercraft.readthedocs.org/

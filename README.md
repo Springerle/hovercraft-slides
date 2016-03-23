@@ -64,6 +64,10 @@ invoke view
 Note that ``invoke view`` starts a watchdog process that will react to any
 changes in ``*.rst`` files by rendering and reloading the open browser tab (*live reload*).
 
+See the template's
+[README](https://github.com/Springerle/hovercraft-slides/blob/master/%7B%7Bcookiecutter.repo_name%7D%7D/README.rst)
+for more details on available tasks.
+
 
 ### Add Your Own Logo
 

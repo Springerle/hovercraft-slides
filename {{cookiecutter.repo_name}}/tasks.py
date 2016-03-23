@@ -15,6 +15,7 @@ import webbrowser
 
 from rituals.easy import task, Collection, pushd
 from rituals.util import antglob, notify
+from rituals.util.which import which, WhichError
 from rituals.acts.basic import help
 
 BASEDIR = os.path.dirname(__file__)
@@ -109,4 +110,32 @@ def html(ctx, browse=False):
         webbrowser.open_new_tab(index_file)
 
 
+@task(help={
+    'open': "Open the generated PDF",
+})
+def pdf(ctx, open=False):
+    """Build PDF slide show."""
+    try:
+        which("deck2pdf")
+    except WhichError:
+        notify.failure("You need to install 'deck2pdf' from https://github.com/melix/deck2pdf")
+    ctx.run("invoke html")
+    ctx.run("deck2pdf --profile=impressjs _html/index.html slides.pdf")
+    if open:
+        ctx.run("xdg-open slides.pdf &", pty=False)
+
+
+@task(help={
+    'open': "Open the generated image",
+    'width': "Width of a single slide in pixels",
+})
+def thumbs(ctx, open=False, width=480):
+    """Create slide show thumbnails."""
+    ctx.run("invoke pdf")
+    ctx.run("montage -density 300 slides.pdf -mode Concatenate -tile 2x999 -quality 80 -resize {} slides.jpg".format(width))
+    if open:
+        ctx.run("xdg-open slides.jpg &", pty=False)
+
+
+# Add local tasks to root namespace
 namespace = Collection.from_module(sys.modules[__name__], name='')

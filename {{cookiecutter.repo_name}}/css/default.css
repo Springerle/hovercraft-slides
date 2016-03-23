@@ -108,8 +108,12 @@ a:hover {
 
 pre.highlight {
     background: #777 linear-gradient(to top, #666, #888, #666);
+    padding-left: .5rem;
+    padding-right: .5rem;
 }
 
 tt {
     background: linear-gradient(to top, #336, #669, #336);
+    padding-left: .3rem;
+    padding-right: .3rem;
 }

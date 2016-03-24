@@ -79,6 +79,28 @@ Floating Images
 
 ----
 
+Code Blocks
+===========
+
+.. code-block:: python
+    :class: small
+
+    @task(help={
+        'browse': "Open slides in a new browser tab",
+    })
+    def html(ctx, browse=False):
+        """Build HTML tree."""
+        index_file = '_html/index.html'
+        ctx.run("hovercraft -t simple --skip-notes index.rst {}"
+                .format(os.path.dirname(index_file)))
+
+        # Open in browser?
+        if browse:
+            webbrowser.open_new_tab(index_file)
+
+
+----
+
 :class: bullet-arrow
 
 Credits

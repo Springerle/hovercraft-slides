@@ -52,8 +52,19 @@ img.float-right {
 
 
 /****************************************************************************
- ***    Bullet Styles
+ ***    List / Bullet Styles
  ****************************************************************************/
+
+li {
+    margin-top: .2em;
+}
+div.step > ul > li {
+    margin-top: .4em;
+}
+
+div.step > ul > li > ul {
+    font-size: 85%;
+}
 
 div.bullet-checkmark > ul > li {
     list-style: none;

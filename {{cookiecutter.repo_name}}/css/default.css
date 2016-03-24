@@ -7,21 +7,26 @@
 
 body {
     color: white;
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 20pt;
-    width:1100px;
+    width: 1100px;
 
     background: #111;
     background: radial-gradient(#225, #111);
 }
 
 h1, h2, h3, h4, h5 {
+    font-family: "Times New Roman", Times, serif;
     background-color: #149;
     padding: 5px;
     padding-left: 10px;
+    border-radius: 4px;
+    box-shadow: 1px 1px #777;
 }
 h1 {
     background: #149 no-repeat right;
     background-image: url('../img/title-logo.png');
+    padding: 10px;
     padding-right: 80px;
     font-size: 170%;
 }

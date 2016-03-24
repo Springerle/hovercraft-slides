@@ -18,11 +18,23 @@ h1, h2, h3, h4, h5 {
     padding: 5px;
     padding-left: 10px;
 }
-
 h1 {
     background: #149 no-repeat right;
     background-image: url('../img/title-logo.png');
     padding-right: 80px;
+    font-size: 170%;
+}
+h2 {
+    font-size: 120%;
+}
+h3 {
+    font-size: 110%;
+}
+h4 {
+    font-size: 95%;
+}
+h5 {
+    font-size: 90%;
 }
 
 

@@ -53,6 +53,8 @@ After a while, a browser tab should open with the rendered presentation.
 To use this template, refer to the
 [Cookiecutter documentation](https://cookiecutter.readthedocs.org/en/latest/usage.html)
 – it was tested with Cookiecutter 1.4.0.
+You also need Python3 installed on the machine you're authoring your slide set on,
+with a working `pyvenv` command.
 After you created your new slide project, these commands install all tools and
 open a browser tab with the rendered ``index.rst`` slide set:
 

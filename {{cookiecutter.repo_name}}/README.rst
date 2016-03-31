@@ -41,6 +41,7 @@ view    Start live-reload watchdog.
 
 Note that ``invoke view`` starts a watchdog process that will react to any
 changes in ``*.rst`` files by rendering and reloading the open browser tab (*live reload*).
+Use ``invoke view --kill`` to stop a running watchdog.
 
 The ``pdf`` task needs `deck2pdf`_ installed, and ``thumbs`` additionally requires *ImageMagick*
 (usually available via your operating system's packages).

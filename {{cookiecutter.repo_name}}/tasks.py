@@ -10,6 +10,7 @@ import sys
 import time
 import shlex
 import shutil
+import signal
 import subprocess
 import webbrowser
 
@@ -17,6 +18,7 @@ from rituals.easy import task, Collection, pushd
 from rituals.util import antglob, notify
 from rituals.util.which import which, WhichError
 from rituals.acts.basic import help
+from rituals.acts.documentation import upload
 
 BASEDIR = os.path.dirname(__file__)
 
@@ -56,9 +58,10 @@ def clean(_dummy_ctx, venv=False, extra=''):
 
 @task(help={
     'clean': "Start with a clean build area",
+    'kill': "Kill a running watchdog process and exit",
     'opts': "Extra flags for Hovercraft",
 })
-def view(ctx, browse=False, clean=False, opts=''):
+def view(ctx, browse=False, clean=False, kill=False, opts=''):
     """Start live-reload watchdog."""
     def activity(what=None, i=None):
         "Helper"
@@ -68,20 +71,55 @@ def view(ctx, browse=False, clean=False, opts=''):
             sys.stdout.write(' {}  Waiting for {}\r'.format(r'\|/-'[i % 4], what or 'something'))
         sys.stdout.flush()
 
+    def pidof(cmd_fragment):
+        """Find a process by its cmd string."""
+        find_pid = "ps auxww | grep -i '{}' | grep -v grep".format(cmd_fragment.replace("'", r"'\''"))
+        try:
+            pid = subprocess.check_output(find_pid, shell=True).strip()
+            return int(pid.split(None, 2)[1]) if pid else 0
+        except subprocess.CalledProcessError:
+            return 0
+
+    # Kill old processes
+    core_cmd = '''watchmedo shell-command'''
+    for i in range(60):
+        pid = pidof(core_cmd + '.*' + BASEDIR)
+        if pid:
+            print("Killing old watchdog process #{}...".format(pid))
+            os.kill(pid, signal.SIGTERM)
+            time.sleep(.3)
+        else:
+            if kill:
+                print("No (more) watchdog processes for this directory found.")
+            break
+    if kill:
+        return 0
+
+    # Clean result and start watchdog
     index_file = '_html/index.html'
+    cmd = core_cmd + (
+           ''' --command="hovercraft{opts} index.rst {htmldir}" '''
+           ''' --patterns="*.rst"'''
+           ''' {basedir} &'''
+           .format(opts=opts, htmldir=os.path.dirname(index_file), basedir=BASEDIR))
     if clean:
         ctx.run("invoke clean")
     elif os.path.exists(index_file):
         os.remove(index_file)
-
-    # Assuming that your browser has a live-reload plugin
-    cmd = ('''watchmedo shell-command'''
-           ''' --command="hovercraft {opts} index.rst {htmldir}" '''
-           ''' --patterns="*.rst"'''
-           ''' {basedir} &'''
-           .format(opts=opts, htmldir=os.path.dirname(index_file), basedir='.'))
     subprocess.call(cmd, shell=True)
 
+    # Wait for watchdog
+    for i in range(60):
+        activity('watchdog process', i)
+        if pidof(core_cmd + '.*' + BASEDIR):
+            activity('OK')
+            break
+        time.sleep(1)
+    else:
+        activity('ERR')
+        return 1
+
+    # Wait for HTML tree
     for i in range(60):
         activity('HTML index file', i)
         if os.path.exists(index_file):
@@ -89,9 +127,11 @@ def view(ctx, browse=False, clean=False, opts=''):
             break
         time.sleep(1)
         # trigger first build
-        os.utime(os.path.join(BASEDIR, 'README.rst'), None)
+        if i == 0:
+            os.utime(os.path.join(BASEDIR, 'README.rst'), None)
     else:
         activity('ERR')
+        return 1
 
     # Open in browser
     webbrowser.open_new_tab(index_file)
@@ -137,5 +177,15 @@ def thumbs(ctx, open=False, width=480):
         ctx.run("xdg-open slides.jpg &", pty=False)
 
 
-# Add local tasks to root namespace
-namespace = Collection.from_module(sys.modules[__name__], name='')
+namespace = Collection.from_module(sys.modules[__name__], name='', config={'rituals': dict(
+    docs = dict(
+        sources = '.',
+        build = '_html',
+        upload = dict(
+            method = 'webdav',
+            targets = dict(
+                webdav = dict(url=None),  # must be set in the environment
+            ),
+        ),
+    ),
+)})

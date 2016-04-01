@@ -53,15 +53,6 @@ div.step {
     min-height: 720px;
 }
 
-div.step img.centered {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
 img.float-right {
     border: none;
     padding-left: 1rem;
@@ -82,6 +73,40 @@ div.step > ul > li {
 
 div.step > ul > li > ul {
     font-size: 85%;
+}
+
+div.step.small-items > ul > li, div.step.compact-items > ul > li, div.step.tiny-items > ul > li {
+    margin-top: .1em;
+}
+
+div.step.small-items ul {
+    font-size: 70%;
+}
+
+div.step.compact-items ul {
+    font-size: 60%;
+}
+
+div.step.tiny-items ul {
+    font-size: 50%;
+}
+
+div.step img.centered {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+div.column-2 > ul {
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-width: 520p;
+    -moz-column-width: 520p;
+    -webkit-column-width: 520p;
 }
 
 div.bullet-checkmark > ul > li {

@@ -139,11 +139,13 @@ def view(ctx, browse=False, clean=False, kill=False, opts=''):
 
 @task(help={
     'browse': "Open slides in a new browser tab",
+    'presentation': "Generate slides for presentation (with console and notes)",
 })
-def html(ctx, browse=False):
+def html(ctx, browse=False, presentation=False):
     """Build HTML tree."""
     index_file = '_html/index.html'
-    ctx.run("hovercraft -t simple --skip-notes index.rst {}".format(os.path.dirname(index_file)))
+    opts = "--auto-console" if presentation else "-t simple --skip-notes"
+    ctx.run("hovercraft {} index.rst {}".format(opts, os.path.dirname(index_file)))
 
     # Open in browser?
     if browse:

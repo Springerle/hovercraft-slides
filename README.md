@@ -26,6 +26,7 @@ presentation.
    * Image-only slides
    * 2-column slide layout
    * Styled bullet points
+   * An optional global notice (at the bottom of the screen)
 
 The demo slides rendered from
 [reStructuredText](https://raw.githubusercontent.com/Springerle/hovercraft-slides/master/%7B%7Bcookiecutter.repo_name%7D%7D/index.rst)

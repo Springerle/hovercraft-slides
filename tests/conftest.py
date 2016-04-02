@@ -16,6 +16,9 @@ import subprocess
 import pytest
 
 
+TEST_FOLDER = 'present-with-hovercraft-slides'
+
+
 # Globally available fixtures
 @pytest.fixture(scope='session')
 def project():
@@ -23,13 +26,11 @@ def project():
 
         The fixture contains the abspath of the created workdir.
     """
-    new_workdir = 'hovercraft-presentation-slides'
-
-    if os.path.exists(new_workdir):
-        shutil.rmtree(new_workdir)
+    if os.path.exists(TEST_FOLDER):
+        shutil.rmtree(TEST_FOLDER)
     subprocess.check_call(['cookiecutter', '--no-input', '.'])
 
-    return os.path.abspath(new_workdir)
+    return os.path.abspath(TEST_FOLDER)
 
 
 @pytest.fixture(scope='session')

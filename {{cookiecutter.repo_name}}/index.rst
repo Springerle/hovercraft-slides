@@ -44,7 +44,7 @@ Bullet Styles
 
 .. break
 
-- To add spacing between bullets, add a *reStructuredText* comment:
+- To add spacing between bullets, add a *re*\ Structured\ *Text* comment:
 
     ::
 

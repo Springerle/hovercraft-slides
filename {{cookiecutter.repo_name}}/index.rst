@@ -145,6 +145,7 @@ Credits
    :class: float-right
 
 - Powered by `Hovercraft!`_
+- Powered by `Cookiecutter`_
 
 .. break
 
@@ -152,3 +153,4 @@ Credits
 - Python logo – https://www.python.org/community/logos/
 
 .. _`Hovercraft!`: http://hovercraft.readthedocs.org/
+.. _`Cookiecutter`: https://github.com/audreyr/cookiecutter

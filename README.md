@@ -24,6 +24,7 @@ presentation.
 
    * Floating images
    * Image-only slides
+   * 2-column slide layout
    * Styled bullet points
 
 The demo slides rendered from

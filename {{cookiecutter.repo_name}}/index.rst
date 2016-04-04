@@ -152,5 +152,7 @@ Credits
 - Hovercraft! logo – https://github.com/regebro/hovercraft/
 - Python logo – https://www.python.org/community/logos/
 
+*[Licensing conditions of the original projects apply]*
+
 .. _`Hovercraft!`: http://hovercraft.readthedocs.org/
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter

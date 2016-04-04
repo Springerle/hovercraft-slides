@@ -31,6 +31,8 @@ presentation.
  * Live-reload preview during authoring
  * Convert to PDF to get a single-file document
 
+For authoring, you need Python3 + bash (Linux, Mac OSX, Babun, or Windows 10).
+
 
 ## Features
 

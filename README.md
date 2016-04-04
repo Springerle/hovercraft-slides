@@ -23,12 +23,10 @@ presentation.
  * HTML slides work everywhere, re-use CSS know-how
  * But write in text markup (reStructuredText)
  * Text is way more malleable than typical presentation software slides
-
    * Refactor your slides as you do with code
    * Text is SCM-friendly, get a proper change history
    * Easy to update embedded code snippets (even automatically)
    * Re-purpose your slides easily (blog posts, docs, …)
-
  * Embedded presenter console (2nd window with notes + timer + slide previews)
  * Live-reload preview during authoring
  * Convert to PDF to get a single-file document

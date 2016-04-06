@@ -27,9 +27,11 @@ BASEDIR = os.path.dirname(__file__)
     venv="Include an existing virtualenv (in '.' or in '.venv')",
     extra="Any extra patterns, space-separated and possibly quoted",
 ))
-def clean(_dummy_ctx, venv=False, extra=''):
+def clean(ctx, venv=False, extra=''):
     """Perform house-keeping."""
     notify.banner("Cleaning up project files")
+
+    ctx.run("invoke view --kill")
 
     # Add patterns based on given parameters
     venv_dirs = ['bin', 'include', 'lib', 'share', 'local', '.venv']

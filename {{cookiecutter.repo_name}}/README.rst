@@ -7,8 +7,10 @@
 Introduction
 ------------
 
-This is a project for a slide deck, which uses `reStructuredText`_
+This is a project for a `slide deck`_, which uses `reStructuredText`_
 markup to create an `impress.js`_ presentation via the Python3 tool `Hovercraft!`_.
+
+.. _`slide deck`: index.rst
 
 
 Installation

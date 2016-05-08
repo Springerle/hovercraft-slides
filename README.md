@@ -1,7 +1,7 @@
 # hovercraft-slides
 
 A cookiecutter template that creates a
-[Hovercraft!](https://hovercraft.readthedocs.org/)
+[Hovercraft!](https://hovercraft.readthedocs.io/)
 presentation.
 
  [![Groups](https://img.shields.io/badge/Google_groups-springerle--users-orange.svg)](https://groups.google.com/forum/#!forum/springerle-users)
@@ -70,7 +70,7 @@ After a while, a browser tab should open with the rendered presentation.
 ### Create Your Own Slide Set
 
 To use this template, refer to the
-[Cookiecutter documentation](https://cookiecutter.readthedocs.org/en/latest/usage.html)
+[Cookiecutter documentation](https://cookiecutter.readthedocs.io/en/latest/usage.html)
 – it was tested with Cookiecutter 1.4.0.
 You also need Python3 installed on the machine you're authoring your slide set on,
 with a working `pyvenv` command.

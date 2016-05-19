@@ -5,7 +5,7 @@
 @import url('normalize.css');
 @import url('colorful.css');
 
-body {
+body, div.step {
     color: white;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 20pt;
@@ -121,6 +121,108 @@ div.step img.centered {
     bottom: 0;
 }
 
+div.step img.background {
+    z-index: -1;
+}
+
+div.step.bold {
+    font-weight: 700;
+}
+
+div.step.big {
+    font-size: 120%;
+}
+
+div.step.bigger {
+    font-size: 150%;
+}
+
+div.step.large {
+    font-size: 180%;
+}
+
+div.step.huge {
+    font-size: 250%;
+}
+
+div.step.red {
+    color: #f00;
+}
+
+div.step.green {
+    color: #0f0;
+}
+
+div.step.blue {
+    color: #00f;
+}
+
+div.step.black {
+    color: #000;
+}
+
+div.step.white {
+    color: #fff;
+}
+
+div.step.black-outline {
+    text-shadow: black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px;
+
+}
+
+div.step.big.black-outline, div.step.bigger.black-outline, div.step.large.black-outline, div.step.huge.black-outline {
+    text-shadow: black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px,
+                 black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px,
+                 black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px,
+                 black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px,
+                 black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px,
+                 black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+div.step.grey-outline {
+    text-shadow: #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px;
+
+}
+
+div.step.big.grey-outline, div.step.bigger.grey-outline, div.step.large.grey-outline, div.step.huge.grey-outline {
+    text-shadow: #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px,
+                 #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px,
+                 #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px,
+                 #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px,
+                 #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px,
+                 #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px, #999 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+div.step.white-outline {
+    text-shadow: white 0px 0px 1px, #000 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px;
+
+}
+
+div.step.big.white-outline, div.step.bigger.white-outline, div.step.large.white-outline, div.step.huge.white-outline {
+    text-shadow: white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px,
+                 white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px,
+                 white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px,
+                 white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px,
+                 white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px,
+                 white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px, white 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+div.step.centered {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+div.step.centered > div.line-block {
+    text-align: center;
+    margin: auto;
+    width: 780px;
+    max-width: 50%;
+}
+
 div.column-2 > ul {
     column-count: 2;
     -moz-column-count: 2;
@@ -163,7 +265,7 @@ div.bullet-star > ul > li {
 }
 div.bullet-star > ul > li:before {
     content: "\2605";
-    color: #9ee;
+    color: #88f;
     margin-right: 1.1rem;
 }
 

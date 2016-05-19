@@ -21,6 +21,11 @@ from rituals.acts.basic import help
 from rituals.acts.documentation import upload
 
 BASEDIR = os.path.dirname(__file__)
+UPLOAD_URL = os.environ.get('INVOKE_RITUALS_DOCS_UPLOAD_TARGETS_WEBDAV_URL')
+if UPLOAD_URL:
+    # re-use a typical configuration for Python docs, but store slide uploads separate
+    UPLOAD_URL = UPLOAD_URL.replace('/python/', '/slides/')
+    os.environ['INVOKE_RITUALS_DOCS_UPLOAD_TARGETS_WEBDAV_URL'] = UPLOAD_URL
 
 
 @task(help=dict(

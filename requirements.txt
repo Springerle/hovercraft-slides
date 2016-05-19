@@ -2,7 +2,7 @@
 # Project's virtualenv requirements
 #
 
-pip>=8
+pip<8
 invoke==0.12.2
 #rituals==0.3.0
 -e git+https://github.com/jhermann/rituals.git#egg=rituals

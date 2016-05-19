@@ -21,8 +21,53 @@
 Agenda
 ------
 
+- What is `Hovercraft!`_?
+- Why use `Hovercraft!`_?
 - Show example `Hovercraft!`_ slides
 - Present built-in styling options
+
+----
+
+:class: bullet-checkmark
+
+What is Hovercraft?
+===================
+
+- Write your slides in *re*\ Structured\ *Text*
+- Get a HTML5 / CSS3 presentation created from markup
+- Prezi-style effects by using ``impress.js`` (including 3D effects)
+
+.. break
+
+- Convert to PDF to get a single-file document
+- Easy to create using a template for new presentation projects
+- You need Python3, a modern browser, and Linux / Mac OSX
+- Not so Windows-friendly, but might work
+
+  - some amount of manual setup
+  - less convenience (e.g. no live reload watchdog)
+
+
+----
+
+:class: bullet-checkmark
+
+Why Use Hovercraft?
+===================
+
+Disclaimer: YMMV
+
+- HTML slides work everywhere, re-use CSS know-how
+- But write in text markup (*re*\ Structured\ *Text*)
+- Text is way more malleable than typical presentation software slides
+
+  - Refactor your slides as you do with code
+  - Text is SCM-friendly, get a proper change history
+  - Easy to update embedded code snippets (even automatically)
+  - Re-purpose your slides easily (blog posts, docs, …)
+
+- Embedded presenter console (notes + timer + slide previews)
+- Live-reload preview during authoring
 
 
 ----
@@ -50,17 +95,42 @@ Bullet Styles
 
         .. break
 
+----
+
+:class: centered huge bold red white-outline
+
+.. image:: img/python-powered.png
+   :width: 720px
+   :class: centered background
+
+| Text Style: centered huge bold red white-outline
+
+| Use them in combination with background images
+
+
+----
+
+Text Styles
+===========
+
+- Emphasis: ``bold``
+- Size: ``big``, ``bigger``, ``large``, ``huge``
+- Color: ``red``, ``green``, ``blue``, ``black``, ``white``
+- Outline: ``black-outline``, ``grey-outline``, ``white-outline``
+
 
 ----
 
 Centered Images
 ===============
 
-(leave out the title for image-only slides)
+- Leave out the title for image-only slides
+- Add ``:class: centered`` for centering
+- Add ``:class: background`` to put it below other content
 
 .. image:: img/python-powered.png
    :width: 720px
-   :class: centered
+   :class: centered background
 
 
 ----

@@ -33,7 +33,7 @@ For authoring, you need Python3 + bash (Linux, Mac OSX, Babun, or Windows 10).
 Features
 --------
 
-- Selection of a few standard licences (CC0, …)
+- Selection of a few standard licences (CC0, CC-BY-SA-4, …)
 - Default CSS for common styling needs
 
   - Floating images

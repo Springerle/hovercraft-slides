@@ -4,6 +4,9 @@
 {%- endmacro -%}
 {{ section(cookiecutter.project_name) }}
 
+.. contents:: **Table of Contents**
+
+
 Introduction
 ------------
 

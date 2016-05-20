@@ -70,7 +70,21 @@ Create Your Own Slide Set
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To use this template, refer to the `Cookiecutter documentation`_
-– it was tested with Cookiecutter 1.4.0. You also need Python3 installed
+– it was tested with Cookiecutter 1.4.0. Here's a way to install it
+to its own virtualenv:
+
+.. code:: sh
+
+    mkdir -p ~/bin ~/.local/venvs
+    test -d ~/.local/venvs/cookiecutter \
+        || virtualenv ~/.local/venvs/cookiecutter
+    ~/.local/venvs/cookiecutter/bin/pip install -U pip setuptools wheel
+    ~/.local/venvs/cookiecutter/bin/pip install -U cookiecutter
+    ln -s ~/.local/venvs/cookiecutter/bin/cookiecutter ~/bin
+    which cookiecutter || exec $SHELL -l
+    cookiecutter --version
+
+You also need Python3 installed
 on the machine you're authoring your slide set on, with a working
 ``pyvenv`` command. After you created your new slide project, these
 commands install all tools and open a browser tab with the rendered

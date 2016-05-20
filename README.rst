@@ -114,6 +114,20 @@ value of ``80px`` for ``h1`` accordingly (in the first section of
 ``css/default.css``).
 
 
+Add Your Custom CSS
+~~~~~~~~~~~~~~~~~~~
+
+If you want to add you own CSS styles, the best way to do that is to create
+a *new* file (e.g. ``css/custom.css``), and start it with an import of the defaults::
+
+    @import url('default.css');
+
+Then change the ``:css:`` field in ``index.rst`` to point to your custom CSS file.
+Doing it that way ensures you can easily update the defaults later on,
+by just overwriting ``default.css`` with a new version.
+When you add some CSS rules useful to a wider audience, PRs are welcome.
+
+
 .. |Groups| image:: https://img.shields.io/badge/Google_groups-springerle--users-orange.svg
    :target: https://groups.google.com/forum/#!forum/springerle-users
 .. |CC0 licensed| image:: http://img.shields.io/badge/license-CC0-red.svg

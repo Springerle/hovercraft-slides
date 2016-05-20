@@ -11,9 +11,11 @@ A cookiecutter template that creates a `Hovercraft!`_ presentation.
 Why ‘Hovercraft!’?
 ------------------
 
+Disclaimer: YMMV, these are my reasons…
+
 - HTML slides work everywhere (uses `impress.js`_)
-- Re-use CSS know-how
 - But write in text markup (`reStructuredText`_)
+- Re-use your CSS3 know-how
 - Text is way more malleable than typical presentation software slides
 
   - Refactor your slides as you do with code

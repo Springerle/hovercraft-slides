@@ -8,7 +8,7 @@
 :keywords: slides, impress.js
 :auto-console: false
 :skip-help: true
-:css: css/default.css
+:css: css/custom.css
 
 ----
 

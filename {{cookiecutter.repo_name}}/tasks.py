@@ -113,6 +113,7 @@ def view(ctx, browse=False, clean=False, kill=False, opts=''):
         ctx.run("invoke clean")
     elif os.path.exists(index_file):
         os.remove(index_file)
+    ctx.run("invoke html")  # run a plain HTML build 1st
     subprocess.call(cmd, shell=True)
 
     # Wait for watchdog
@@ -151,6 +152,12 @@ def view(ctx, browse=False, clean=False, kill=False, opts=''):
 def html(ctx, browse=False, presentation=False):
     """Build HTML tree."""
     index_file = '_html/index.html'
+
+    for subdir in ('img', 'css'):
+        dest = os.path.join(os.path.dirname(index_file), subdir)
+        if not os.path.exists(dest):
+            shutil.copytree(os.path.join(BASEDIR, subdir), dest)
+
     opts = "--auto-console" if presentation else "-t simple --skip-notes"
     ctx.run("hovercraft {} index.rst {}".format(opts, os.path.dirname(index_file)))
 

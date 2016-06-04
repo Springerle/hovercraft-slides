@@ -224,5 +224,5 @@ Credits
 
 *[Licensing conditions of the original projects apply]*
 
-.. _`Hovercraft!`: http://hovercraft.readthedocs.org/
+.. _`Hovercraft!`: https://hovercraft.readthedocs.io/
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter

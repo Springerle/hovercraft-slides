@@ -74,5 +74,5 @@ Call ``chmod 600 ~/.netrc`` afterwards, to protect your sensitive data.
 .. _`deck2pdf`: https://github.com/melix/deck2pdf
 .. _`impress.js`: https://github.com/impress/impress.js
 .. _`reStructuredText`: http://docutils.sourceforge.net/rst.html
-.. _`Hovercraft!`: https://hovercraft.readthedocs.org/
+.. _`Hovercraft!`: https://hovercraft.readthedocs.io/
 .. _`Artifactory`: https://www.jfrog.com/artifactory/

@@ -2,7 +2,7 @@
 # Project's virtualenv requirements
 #
 
-pip<8
+##pip<8
 invoke==0.21.0
 #rituals==0.3.0
 -e git+https://github.com/jhermann/rituals.git#egg=rituals
@@ -10,4 +10,4 @@ cookiecutter>=1.3
 pytest==3.2.3
 pytest-spec==1.1.0
 
-hovercraft==2.1
+hovercraft==2.4
